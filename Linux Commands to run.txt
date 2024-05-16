@@ -27,7 +27,7 @@ sudo nano launcher.sh
 # navigate to home directory then to this directory, then execute python, then back home
 cd /
 cd home/pi/
-python3 Main/MainProgramV1.py
+python3 Main/Main.py
 cd /
 "
 
@@ -37,7 +37,7 @@ sudo sh launcher.sh
 cd
 mkdir logs
 crontab -e
-@reboot sh /home/pi/launch/launcher.sh >/home/pi/logs/cronlog 2>&1
+@reboot sh /home/pi/Launch/Launcher.sh >/home/pi/logs/cronlog 2>&1
 
 *****Crontab will log any errors or stasuses into /home/pi/logs/cronlog*******
 
