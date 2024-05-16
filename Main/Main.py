@@ -74,13 +74,14 @@ def loop(last_minute, last_hour, api_key):
       display_option_weather()
       run_once = 1
     if (state_machine == 1):
-      #Stonks App
+      # Stonks App
       display_indices()
       display_crypto()
     if (state_machine == 2):
-      #Clock App
+      # Clock App
       (last_minute, last_hour) = clock_program(last_minute, last_hour)
     if (state_machine == 3):
-      #Weather app
+      # Weather app
+      # Enter the city name that you would like to see
       display_weather("Spokane", api_key)
 loop(last_minute, last_hour, api_key)
