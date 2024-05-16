@@ -1,0 +1,1 @@
+3 Buttons were added, connected to GPIO 2 (left), 3 (middle), 4 (right) and all to GND.
