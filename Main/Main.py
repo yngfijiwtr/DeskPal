@@ -3,7 +3,7 @@ import digitalio
 from Menu import *
 from Apps import *
 
-# Initialise Button IOError
+# Initialise Button IO
 button_left = digitalio.DigitalInOut(board.D2)
 button_left.direction = digitalio.Direction.INPUT
 button_left.pull = digitalio.Pull.UP
