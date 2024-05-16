@@ -130,7 +130,7 @@ def display_weather(city_name, api_key):
     print(f"Wind Speed: {wind_speed} mph")
 
     lcd.cursor_position(0, 0)
-    lcd.message = "Spokane Weather:"
+    lcd.message = f"{city_name} Weather:"
     lcd.cursor_position(0, 1)
     lcd.message = f"{temperature} F {humidity}% RH     "
     time.sleep(5)
