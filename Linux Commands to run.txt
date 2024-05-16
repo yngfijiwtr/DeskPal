@@ -1,0 +1,44 @@
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get install python3-pip
+
+sudo apt install --upgrade python3-setuptools
+
+cd ~
+pip3 install --upgrade adafruit-python-shell
+
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
+sudo -E env PATH=$PATH python3 raspi-blinka.py
+
+sudo pip3 install adafruit-circuitpython-charlcd
+
+sudo pip3 install yfinance
+sudo pip3 install cryptocompare
+
+sudo apt-get install libopenblas-dev
+
+mkdir launch
+cd launch
+sudo nano launcher.sh
+
+"
+#!/bin/sh
+#launcher.sh
+# navigate to home directory then to this directory, then execute python, then back home
+cd /
+cd home/kolokush/
+python3 Main/MainProgramV1.py
+cd /
+"
+
+sudo chmod 755 launcher.sh
+sudo sh launcher.sh
+
+cd
+mkdir logs
+sudo crontab -e
+@reboot sh /home/kolokush/launch/launcher.sh >/home/kolokush/logs/cronlog 2>&1
+
+sudo reboot
+cd logs
+sudo cat cronlog
