@@ -26,7 +26,7 @@ sudo nano launcher.sh
 #launcher.sh
 # navigate to home directory then to this directory, then execute python, then back home
 cd /
-cd home/kolokush/
+cd home/pi/
 python3 Main/MainProgramV1.py
 cd /
 "
