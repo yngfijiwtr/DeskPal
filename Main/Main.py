@@ -82,5 +82,5 @@ def loop(last_minute, last_hour, api_key):
       (last_minute, last_hour) = clock_program(last_minute, last_hour)
     if (state_machine == 3):
       #Weather app
-      display_weather(Spokane, api_key)
+      display_weather("Spokane", api_key)
 loop(last_minute, last_hour, api_key)
