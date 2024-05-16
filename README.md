@@ -11,3 +11,6 @@ The program will autostart using Linux's crontab running a launch.sh file that r
 
 The following link is for the Adafruit 16x2 installation tutorial:
 https://community.element14.com/products/raspberry-pi/b/blog/posts/16x2-lcd-interfacing-with-raspberry-pi?fbclid=IwZXh0bgNhZW0CMTAAAR1wYiiaZse_n6DcwTYXt_Keti1EzDCKkO5fNAW_5tXk5jQay1glWJBSp1A_aem_AZU3erYDnUgNG-ssZ_C_wCB44ULS7ktwHuzH3UMp5sF-AV84e2E9jDQFhwIi7tq3ZXNzZI4QvP2C2mz9pDWWOidG
+
+***UPDATE 5/16/2024***
+The Program has been broken down to multiple files for easier nano editing
