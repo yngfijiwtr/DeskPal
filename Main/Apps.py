@@ -3,6 +3,7 @@ import digitalio
 import board
 import time
 import datetime
+import requests
 from Stocks import *
 
 # Modify this if you have a different sized character LCD
@@ -106,7 +107,7 @@ def clock_program(last_minute, last_hour):
 import requests
 def display_weather(city_name, api_key):
     # Construct the URL with the city name
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=metric"
+  url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=imperial"
 
   # Send HTTP request to the API
   response = requests.get(url)
@@ -123,7 +124,7 @@ def display_weather(city_name, api_key):
     wind_speed = data['wind']['speed']
 
     # Print the weather information
-    print(f"Weather in Spokane: {weather_description.capitalize()}")
+    print(f"Weather in {city_name}: {weather_description.capitalize()}")
     print(f"Temperature: {temperature}°F")
     print(f"Humidity: {humidity}%")
     print(f"Wind Speed: {wind_speed} mph")
