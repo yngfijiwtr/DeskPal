@@ -21,7 +21,8 @@ last_minute = None
 last_hour = None
 
 # Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
-api_key = '2df3d34280b11b7193b818208d331f0b'
+# You can sign up for a free API key on the OpenWeatherMap website.
+api_key = 'YOUR_API_KEY'
 
 # State of machine
 state_machine = 0
