@@ -10,10 +10,10 @@ pip3 install --upgrade adafruit-python-shell
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo -E env PATH=$PATH python3 raspi-blinka.py
 
-sudo pip3 install adafruit-circuitpython-charlcd
+pip3 install adafruit-circuitpython-charlcd
 
-sudo pip3 install yfinance
-sudo pip3 install cryptocompare
+pip3 install yfinance
+pip3 install cryptocompare
 
 sudo apt-get install libopenblas-dev
 
@@ -36,7 +36,7 @@ sudo sh launcher.sh
 
 cd
 mkdir logs
-sudo crontab -e
+crontab -e
 @reboot sh /home/kolokush/launch/launcher.sh >/home/kolokush/logs/cronlog 2>&1
 
 sudo reboot
