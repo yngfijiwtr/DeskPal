@@ -37,7 +37,7 @@ sudo sh launcher.sh
 cd
 mkdir logs
 crontab -e
-@reboot sh /home/kolokush/launch/launcher.sh >/home/pi/logs/cronlog 2>&1
+@reboot sh /home/pi/launch/launcher.sh >/home/pi/logs/cronlog 2>&1
 
 *****Crontab will log any errors or stasuses into /home/pi/logs/cronlog*******
 
