@@ -104,9 +104,9 @@ def clock_program(last_minute, last_hour):
     lcd.message = "The time is:"
   return last_minute, last_hour
 import requests
-def display_spokane_weather(api_key):
-  # API endpoint for current weather data
-  url = f"http://api.openweathermap.org/data/2.5/weather?q=Spokane&appid={api_key}&units=imperial"
+def display_weather(city_name, api_key):
+    # Construct the URL with the city name
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=metric"
 
   # Send HTTP request to the API
   response = requests.get(url)
