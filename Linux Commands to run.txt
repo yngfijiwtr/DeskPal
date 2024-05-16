@@ -17,9 +17,9 @@ pip3 install cryptocompare
 
 sudo apt-get install libopenblas-dev
 
-mkdir launch
-cd launch
-sudo nano launcher.sh
+mkdir Launch
+cd Launch
+sudo nano Launcher.sh
 
 "
 #!/bin/sh
@@ -31,18 +31,19 @@ python3 Main/Main.py
 cd /
 "
 
-sudo chmod 755 launcher.sh
-sudo sh launcher.sh
+sudo chmod 755 Launcher.sh
+***test the launcher***
+sudo sh Launcher.sh
 
 cd
-mkdir logs
+mkdir Logs
 crontab -e
-@reboot sh /home/pi/Launch/Launcher.sh >/home/pi/logs/cronlog 2>&1
+@reboot sh /home/pi/Launch/Launcher.sh >/home/pi/Logs/cronlog 2>&1
 
 *****Crontab will log any errors or stasuses into /home/pi/logs/cronlog*******
 
 sudo reboot
 
 *****To access the cronlog:*****
-cd logs
+cd Logs
 sudo cat cronlog
