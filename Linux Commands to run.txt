@@ -1,4 +1,4 @@
-**** I haven't done a full test run with these commands on a new Pi, but edits will be made over time***
+**** I haven't done a full test run with these commands on a new Pi, but edits will be made over time****
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get install python3-pip
@@ -41,7 +41,7 @@ mkdir Logs
 crontab -e
 @reboot sh /home/pi/Launch/Launcher.sh >/home/pi/Logs/cronlog 2>&1
 
-*****Crontab will log any errors or stasuses into /home/pi/logs/cronlog*******
+*****Crontab will log any errors or stasuses into /home/pi/logs/cronlog*****
 
 sudo reboot
 
