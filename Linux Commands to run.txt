@@ -34,7 +34,7 @@ cd /
 
 sudo chmod 755 Launcher.sh
 ***test the launcher***
-sudo sh Launcher.sh
+sh Launcher.sh
 
 cd
 mkdir Logs
