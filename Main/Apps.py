@@ -145,6 +145,7 @@ def display_weather(city_name, api_key):
       lcd.message = "Failed to fetch"
       lcd.cursor_position(0, 1)
       lcd.message = "weather data."
+  # The error would most likely be an internet/WiFi issue
   except Exception as e:
     print("Error fetching weather: ", e)
     print("Retrying in 5 seconds...")
