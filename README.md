@@ -18,5 +18,6 @@ https://openweathermap.org/appid
 
 ***UPDATE 5/16/2024***
 The Program has been broken down to multiple files for easier nano editing
+
 ***UPDATE 5/23/2024***
 Error handling added to the weather app
