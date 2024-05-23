@@ -104,7 +104,6 @@ def clock_program(last_minute, last_hour):
     lcd.cursor_position(3, 0)# coloumn,row
     lcd.message = "The time is:"
   return last_minute, last_hour
-import requests
 def display_weather(city_name, api_key):
     # Construct the URL with the city name
   url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=imperial"
