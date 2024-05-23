@@ -107,41 +107,49 @@ def clock_program(last_minute, last_hour):
 def display_weather(city_name, api_key):
     # Construct the URL with the city name
   url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=imperial"
+  
+  max_retries = 3
+  retries = 0
+  while retries < max_retries:
+    try:
+      # Send HTTP request to the API
+      response = requests.get(url)
+      # Check if request was successful
+      if response.status_code == 200:
+        # Parse JSON response
+        data = response.json()
 
-  # Send HTTP request to the API
-  response = requests.get(url)
+        # Extract relevant weather information
+        weather_description = data['weather'][0]['description']
+        temperature = data['main']['temp']
+        humidity = data['main']['humidity']
+        wind_speed = data['wind']['speed']
 
-  # Check if request was successful
-  if response.status_code == 200:
-    # Parse JSON response
-    data = response.json()
+        # Print the weather information
+        print(f"Weather in {city_name}: {weather_description.capitalize()}")
+        print(f"Temperature: {temperature}°F")
+        print(f"Humidity: {humidity}%")
+        print(f"Wind Speed: {wind_speed} mph")
 
-    # Extract relevant weather information
-    weather_description = data['weather'][0]['description']
-    temperature = data['main']['temp']
-    humidity = data['main']['humidity']
-    wind_speed = data['wind']['speed']
-
-    # Print the weather information
-    print(f"Weather in {city_name}: {weather_description.capitalize()}")
-    print(f"Temperature: {temperature}°F")
-    print(f"Humidity: {humidity}%")
-    print(f"Wind Speed: {wind_speed} mph")
-
-    lcd.cursor_position(0, 0)
-    lcd.message = f"{city_name} Weather:"
-    lcd.cursor_position(0, 1)
-    lcd.message = f"{temperature} F {humidity}% RH     "
-    time.sleep(5)
-    lcd.cursor_position(0, 0)
-    lcd.message = f"{weather_description}              "
-    lcd.cursor_position(0, 1)
-    lcd.message = f"Wind: {wind_speed} mph"
-    time.sleep(2)
-  else:
-    print("Failed to fetch weather data.")
-    lcd.clear()
-    lcd.cursor_position(0, 0)
-    lcd.message = "Failed to fetch"
-    lcd.cursor_position(0, 1)
-    lcd.message = "weather data."
+        lcd.cursor_position(0, 0)
+        lcd.message = f"{city_name} Weather:"
+        lcd.cursor_position(0, 1)
+        lcd.message = f"{temperature} F {humidity}% RH     "
+        time.sleep(5)
+        lcd.cursor_position(0, 0)
+        lcd.message = f"{weather_description}              "
+        lcd.cursor_position(0, 1)
+        lcd.message = f"Wind: {wind_speed} mph"
+        time.sleep(2)
+      else:
+        print("Failed to fetch weather data.")
+        lcd.clear()
+        lcd.cursor_position(0, 0)
+        lcd.message = "Failed to fetch"
+        lcd.cursor_position(0, 1)
+        lcd.message = "weather data."
+    except Exception as e:
+      print("Error fetching weather: ", e)
+      print("Retrying in 5 seconds...")
+      retries += 1
+      time.sleep(5)
