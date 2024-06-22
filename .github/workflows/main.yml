@@ -12,11 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Configure Git
+        run: |
+          git config user.name "kolokush"
+          git config user.email "david.kush98767@gmail.com"
+
       - name: Run a one-line script
         run: |
           echo " " >> README.md
-          git config user.name "kolokush"
-          git config user.email "david.kush98767@gmail.com"
           git add README.md
           git commit -m "Always green!"
-          git push
+
+      - name: Push changes
+        env:
+          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
+        run: |
+          git remote set-url origin https://kolokush:${{ secrets.ACTIONS_PAT }}@github.com/KoloKush/DeskPal.git
+          git push origin HEAD:main
