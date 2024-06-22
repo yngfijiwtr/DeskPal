@@ -17,7 +17,6 @@ jobs:
  run: |
  echo " " >> README.md
  git config user.name {{kolokush}}
- git config user.email {{david.kush98767@gmail.com}}
  git add .
  git commit -m "Always green!"
  git push
