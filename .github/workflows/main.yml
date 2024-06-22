@@ -21,7 +21,7 @@ jobs:
         run: |
           echo " " >> README.md
           git add README.md
-          git commit -m "Always green!"
+          git commit -m "Automated Update"
 
       - name: Push changes
         env:
