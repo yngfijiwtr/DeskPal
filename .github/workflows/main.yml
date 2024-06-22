@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
-        run: |
+        run:
           echo " " >> README.md
           git config user.name "kolokush"
           git add README.md
