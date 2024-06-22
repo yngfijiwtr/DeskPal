@@ -27,5 +27,5 @@ jobs:
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
-          git remote set-url origin https://kolokush:${{ secrets.ACTIONS_PAT }}@github.com/KoloKush/DeskPal.git
+          git remote set-url origin https://kolokush:${{ secrets.ACTIONS_PAT }}@github.com/KoloKush/DeskPal
           git push origin HEAD:main
