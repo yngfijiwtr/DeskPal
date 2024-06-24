@@ -24,11 +24,6 @@ last_hour = None
 # You can sign up for a free API key on the OpenWeatherMap website.
 api_key = 'YOUR_API_KEY'
 
-# State of machine
-state_machine = 0
-state_menu = 0
-
-
 def loop(last_minute, last_hour, api_key):
   state_menu = 0
   state_machine = 0
