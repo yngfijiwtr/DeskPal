@@ -1,6 +1,6 @@
 import time
-import cryptocompare
 import yfinance as yf
+import requests
 
 def get_sp500_price():
   max_retries = 3
@@ -66,16 +66,17 @@ def get_nasdaq_price():
   print("Max retries exceeded. Unable to fetch NASDAQ price.")
   return 0
 def get_bitcoin_price():
-  max_retries = 3
-  retries = 0
-  while retries < max_retries:
+    url = 'https://api.coingecko.com/api/v3/simple/price'
+    params = {
+        'ids': 'bitcoin',
+        'vs_currencies': 'usd'
+    }
     try:
-      bitcoin_price = cryptocompare.get_price('BTC', currency='USD')['BTC']['USD']
-      return bitcoin_price
-    except Exception as e:
-      print("Error fetching Bitcoin Price: ", e)
-      print("Retrying in 5 seconds...")
-      retries += 1
-      time.sleep(5)
-  print("Max retries exceeded. Unable to fetch Bitcoin price.")
-  return 0
+        response = requests.get(url, params=params)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        data = response.json()
+        bitcoin_price = data['bitcoin']['usd']
+        return bitcoin_price
+    except requests.RequestException as e:
+        print("Error fetching Bitcoin price:", e)
+        return None
