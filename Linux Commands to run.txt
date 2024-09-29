@@ -22,6 +22,7 @@ mkdir Launch
 cd Launch
 sudo nano Launcher.sh
 
+*****Add the following text (minus the quotations) to the launcher*****
 "
 #!/bin/sh
 #launcher.sh
