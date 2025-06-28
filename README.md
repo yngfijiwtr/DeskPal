@@ -21,6 +21,9 @@ The Program has been broken down to multiple files for easier nano editing
 
 ***UPDATE 5/23/2024***
 Error handling added to the weather app
+
+***UPDATE 6/28/2025***
+To further clarify the setup process, bring all python files into the directory /home/pi/Main/
  
  
  
