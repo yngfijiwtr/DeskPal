@@ -149,3 +149,4 @@ def display_weather(city_name, api_key):
   except Exception as e:
     print("Error fetching weather: ", e)
     print("Retrying in 5 seconds...")
+
