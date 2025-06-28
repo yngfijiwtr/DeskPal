@@ -6,3 +6,6 @@ cd home/pi/
 python3 Main/Main.py
 cd /
 
+
+
+
