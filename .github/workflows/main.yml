@@ -13,9 +13,11 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Configure Git
+        env:
+          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
           git config user.name "yngfijiwtr"
-          git config user.email "you@example.com"
+          git config user.email ACTIONS_PAT
 
       - name: Run a one-line script
         run: |
@@ -24,8 +26,6 @@ jobs:
           git commit -m "Automated Update"
 
       - name: Push changes
-        env:
-          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
           git remote set-url origin https://yngfijiwtr:${{ secrets.ACTIONS_PAT }}@github.com/yngfijiwtr/DeskPal.git
           git push origin HEAD:main
