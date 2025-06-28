@@ -43,6 +43,7 @@ sh Launcher.sh
 cd
 mkdir Logs
 crontab -e
+
 *** at the bottom of the file, put the following line: ***
 @reboot sh /home/pi/Launch/Launcher.sh >/home/pi/Logs/cronlog 2>&1
 
