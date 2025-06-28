@@ -1,3 +1,5 @@
+Project designed by YngFijiWtr
+
 # DeskPal
 Raspberry Pi Zero LCD 16x2 Interactive Desk Screen
 Refer to the pictures folder for demonstrations
