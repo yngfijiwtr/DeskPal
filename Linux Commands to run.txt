@@ -55,4 +55,7 @@ sudo reboot
 cd Logs
 sudo cat cronlog
 
+***Test the process by rebooting***
+sudo reboot
+
 
