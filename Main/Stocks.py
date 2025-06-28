@@ -80,4 +80,3 @@ def get_bitcoin_price():
   except requests.RequestException as e:
     print("Error fetching Bitcoin price:", e)
     return None
-
