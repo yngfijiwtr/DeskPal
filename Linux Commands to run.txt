@@ -54,3 +54,5 @@ sudo reboot
 *****To access the cronlog:*****
 cd Logs
 sudo cat cronlog
+
+
