@@ -25,5 +25,5 @@ jobs:
 
       - name: Push changes
         run: |
-          git remote set-url origin https://yngfijiwtr:${{ secrets.ACTIONS_PAT }}@github.com/yngfijiwtr/DeskPal.git
+          git remote set-url origin https://yngfijiwtr@github.com/yngfijiwtr/DeskPal.git
           git push origin HEAD:main
