@@ -80,4 +80,3 @@ def loop(last_minute, last_hour, api_key):
       # Enter the city name that you would like to see
       display_weather("Spokane", api_key)
 loop(last_minute, last_hour, api_key)
-
