@@ -15,7 +15,7 @@ jobs:
       - name: Configure Git
         run: |
           git config user.name "kolokush"
-          git config user.email "david.kush98767@gmail.com"
+          git config user.email 
 
       - name: Run a one-line script
         run: |
