@@ -1,7 +1,7 @@
 *** Raspberry Pi running the latest Raspbian OS (Debian based Linux) ***
 *** Set it up for SSH if you would prefer that, here's a tutorial: https://www.onlogic.com/blog/how-to-ssh-into-raspberry-pi/ ***
 
-
+***update and install Python***
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get install python3-pip
