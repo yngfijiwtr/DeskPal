@@ -30,3 +30,4 @@ Error handling added to the weather app
 To further clarify the setup process, bring all python files into the directory /home/pi/Main/
  (Otherwise set it up any way you would prefer if you feel comfortable)
  
+ 
