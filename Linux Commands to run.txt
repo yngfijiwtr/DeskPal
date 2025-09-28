@@ -9,7 +9,7 @@ sudo apt-get install python3-pip
 sudo apt install --upgrade python3-setuptools
 
 cd ~
-pip3 install --upgrade adafruit-python-shell
+pip3 install --upgrade adafruit-python-shell --break-system-packages
 
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo -E env PATH=$PATH python3 raspi-blinka.py
@@ -57,5 +57,6 @@ sudo cat cronlog
 
 ***Test the process by rebooting***
 sudo reboot
+
 
 
