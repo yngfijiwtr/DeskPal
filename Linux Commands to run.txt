@@ -39,7 +39,7 @@ User=pi
 WorkingDirectory=/home/pi/Main/
 
 # The command now uses the full path as well
-ExecStart=python3 /home/pi/Main/Main.py > /home/pi/Logs/deskpallog 2>&1
+ExecStart=python3 /home/pi/Main/Main.py & > /home/pi/Logs/deskpallog 2>&1
 
 # Restart the service if it crashes
 Restart=always
@@ -64,6 +64,7 @@ sudo systemctl start deskpal.service
 
 ***Test the process by rebooting***
 sudo reboot
+
 
 
 
