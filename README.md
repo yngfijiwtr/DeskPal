@@ -30,7 +30,7 @@ Error handling added to the weather app
 To further clarify the setup process, bring all python files into the directory /home/pi/Main/
  (Otherwise set it up any way you would prefer if you feel comfortable)
  
- ***UPDATE 9/29/2025**
+ ***UPDATE 9/29/2025***
  Tested all commands on a clean install, and have improved the tutorial. Using Systemd instead of cron to autostart
  
  
