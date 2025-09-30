@@ -42,21 +42,46 @@ sh Launcher.sh
 
 cd
 mkdir Logs
-crontab -e
+
+sudo nano /etc/systemd/system/deskpal.service
+
+Add the following text to the file:
+"
+[Unit]
+Description=Deskpal
+After=network.target
+
+[Service]
+User=pi
+
+# This is the full path to your streamer directory
+WorkingDirectory=/home/pi/Main/
+
+# The command now uses the full path as well
+ExecStart=python3 /home/pi/Main/Main.py > /home/pi/Logs/cronlog 2>&1
+
+# Restart the service if it crashes
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+"
+sudo systemctl daemon-reload
+
+sudo systemctl enable deskpal.service
+
+sudo systemctl start deskpal.service
+
 
 *** at the bottom of the file, put the following line: ***
-@reboot sh /home/pi/Launch/Launcher.sh >/home/pi/Logs/cronlog 2>&1
+@reboot sh /home/pi/Launch/Launcher.sh >/home/pi/Logs/deskpallog 2>&1
 
-*****Crontab will log any errors or stasuses into /home/pi/Logs/cronlog*****
-
-sudo reboot
-
-*****To access the cronlog:*****
-cd Logs
-sudo cat cronlog
+*****deskpal.service will log any errors or stasuses into /home/pi/Logs/deskpallog*****
 
 ***Test the process by rebooting***
 sudo reboot
+
 
 
 
