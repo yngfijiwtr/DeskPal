@@ -21,25 +21,6 @@ pip3 install cryptocompare --break-system-packages
 
 sudo apt-get install libopenblas-dev
 
-
-cd Launch
-sudo nano Launcher.sh
-
-*****Add the following text (minus the quotations) to the launcher*****
-"
-#!/bin/bash
-#launcher.sh
-# navigate to home directory then to this directory, then execute python, then back home
-cd /
-cd home/pi/
-python3 Main/Main.py
-cd /
-"
-
-sudo chmod +x Launcher.sh
-***test the launcher***
-sh Launcher.sh
-
 cd
 mkdir Logs
 
@@ -58,7 +39,7 @@ User=pi
 WorkingDirectory=/home/pi/Main/
 
 # The command now uses the full path as well
-ExecStart=python3 /home/pi/Main/Main.py > /home/pi/Logs/cronlog 2>&1
+ExecStart=python3 /home/pi/Main/Main.py > /home/pi/Logs/deskpallog 2>&1
 
 # Restart the service if it crashes
 Restart=always
@@ -67,6 +48,8 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 "
+
+
 sudo systemctl daemon-reload
 
 sudo systemctl enable deskpal.service
@@ -81,6 +64,7 @@ sudo systemctl start deskpal.service
 
 ***Test the process by rebooting***
 sudo reboot
+
 
 
 
