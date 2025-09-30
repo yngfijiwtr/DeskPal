@@ -14,20 +14,20 @@ pip3 install --upgrade adafruit-python-shell --break-system-packages
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo -E env PATH=$PATH python3 raspi-blinka.py
 
-pip3 install adafruit-circuitpython-charlcd
+pip3 install adafruit-circuitpython-charlcd --break-system-packages
 
-pip3 install yfinance
-pip3 install cryptocompare
+pip3 install yfinance --break-system-packages
+pip3 install cryptocompare --break-system-packages
 
 sudo apt-get install libopenblas-dev
 
-mkdir Launch
+
 cd Launch
 sudo nano Launcher.sh
 
 *****Add the following text (minus the quotations) to the launcher*****
 "
-#!/bin/sh
+#!/bin/bash
 #launcher.sh
 # navigate to home directory then to this directory, then execute python, then back home
 cd /
@@ -36,7 +36,7 @@ python3 Main/Main.py
 cd /
 "
 
-sudo chmod 755 Launcher.sh
+sudo chmod +x Launcher.sh
 ***test the launcher***
 sh Launcher.sh
 
@@ -57,6 +57,7 @@ sudo cat cronlog
 
 ***Test the process by rebooting***
 sudo reboot
+
 
 
 
