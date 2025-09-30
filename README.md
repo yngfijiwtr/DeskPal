@@ -9,8 +9,8 @@ Refer to the pictures folder for demonstrations
 
 - I have added a text document with the linux commands I ran.
 
-- The program will autostart using Linux's crontab running a launch.sh shell file that runs the python3 program.
-- Bootup time on the Zero W was about 45 seconds. (This will be faster on newer models)
+- The program will autostart using systemd as a service that executes the python3 program
+- Bootup time on the Zero W (old) was about 45 seconds. (This will be faster on newer models)
 
 **Credits**
 
@@ -30,7 +30,8 @@ Error handling added to the weather app
 To further clarify the setup process, bring all python files into the directory /home/pi/Main/
  (Otherwise set it up any way you would prefer if you feel comfortable)
  
- 
+ ***UPDATE 9/29/2025**
+ Tested all commands on a clean install, and have improved the tutorial. Using Systemd instead of cron to autostart
  
  
  
