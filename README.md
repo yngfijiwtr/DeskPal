@@ -34,3 +34,4 @@ To further clarify the setup process, bring all python files into the directory 
  Tested all commands on a clean install, and have improved the tutorial. Using Systemd instead of cron to autostart
  
  
+ 
